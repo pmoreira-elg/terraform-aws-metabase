@@ -1,8 +1,9 @@
+
 resource "aws_lb" "this" {
-  name_prefix     = "mb-"
+  name            = "${local.id.name}-lb"
   security_groups = ["${aws_security_group.alb.id}"]
   subnets         = tolist(var.public_subnet_ids)
-  tags            = var.tags
+  tags            = local.tags
 
   access_logs {
     bucket  = aws_s3_bucket.this.bucket
@@ -14,11 +15,14 @@ resource "aws_lb" "this" {
   }
 }
 
+
+
 resource "aws_lb_listener" "http" {
   load_balancer_arn = aws_lb.this.arn
   depends_on        = [aws_lb.this] # https://github.com/terraform-providers/terraform-provider-aws/issues/9976
   port              = "80"
   protocol          = "HTTP"
+  tags              = local.tags
 
   default_action {
     type = "redirect"
@@ -42,6 +46,7 @@ resource "aws_lb_listener" "https" {
   protocol          = "HTTPS"
   ssl_policy        = var.ssl_policy
   certificate_arn   = var.certificate_arn
+  tags              = local.tags
 
   default_action {
     type = "fixed-response"
@@ -59,10 +64,10 @@ resource "aws_lb_listener" "https" {
 }
 
 resource "aws_s3_bucket" "this" {
-  bucket_prefix = "mb-"
+  bucket        = "${local.id.name}-s3"
   acl           = "private"
   force_destroy = ! var.protection
-  tags          = var.tags
+  tags          = local.tags
 
   server_side_encryption_configuration {
     rule {
@@ -105,9 +110,9 @@ data "aws_iam_policy_document" "s3" {
 }
 
 resource "aws_security_group" "alb" {
-  name_prefix = "${var.id}-alb-"
-  vpc_id      = var.vpc_id
-  tags        = var.tags
+  name      = "${local.id.name}-sg-alb"
+  vpc_id    = var.vpc_id
+  tags      = local.tags
 
   lifecycle {
     create_before_destroy = true

@@ -1,0 +1,566 @@
+[
+  {
+    "id": "2dce3f7b-8411-5142-89a5-1ee5990b4e2e",
+    "type": "event",
+    "attributes": {
+      "eventType": "transaction/initiated",
+      "createdAt": "2021-11-30T12:10:25.471Z",
+      "resourceType": "transaction",
+      "source": "source/transaction",
+      "resourceId": "61a614b0-5e1e-4853-abbf-6a8e5cd38dde",
+      "resource": {
+        "attributes": {
+          "processName": "flex-hourly-default-process",
+          "transitions": [
+            {
+              "transition": "transition/request-payment",
+              "createdAt": "2021-11-30T12:10:25.469Z",
+              "by": "customer"
+            }
+          ],
+          "payoutTotal": {
+            "amount": 2450,
+            "currency": "EUR"
+          },
+          "processVersion": 38,
+          "createdAt": "2021-11-30T12:10:24.852Z",
+          "lastTransitionedAt": "2021-11-30T12:10:25.469Z",
+          "protectedData": {
+            "stripePaymentIntents": {
+              "default": {
+                "stripePaymentIntentId": "pi_3K1VADHKDoHUPYFk0biLdzxN",
+                "stripePaymentIntentClientSecret": "pi_3K1VADHKDoHUPYFk0biLdzxN_secret_V5SckiNuTFrGQKe9d4FtZSQOa"
+              }
+            }
+          },
+          "lineItems": [
+            {
+              "quantity": 1,
+              "reversal": false,
+              "lineTotal": {
+                "amount": 3500,
+                "currency": "EUR"
+              },
+              "code": "line-item/adult",
+              "includeFor": ["customer", "provider"],
+              "unitPrice": {
+                "amount": 3500,
+                "currency": "EUR"
+              }
+            },
+            {
+              "reversal": false,
+              "lineTotal": {
+                "amount": -350,
+                "currency": "EUR"
+              },
+              "code": "line-item/discount",
+              "includeFor": ["customer"],
+              "unitPrice": {
+                "amount": 3500,
+                "currency": "EUR"
+              },
+              "percentage": -10
+            },
+            {
+              "reversal": false,
+              "lineTotal": {
+                "amount": -1050,
+                "currency": "EUR"
+              },
+              "code": "line-item/provider-commission",
+              "includeFor": ["provider"],
+              "unitPrice": {
+                "amount": 3500,
+                "currency": "EUR"
+              },
+              "percentage": -30
+            }
+          ],
+          "lastTransition": "transition/request-payment",
+          "payinTotal": {
+            "amount": 3150,
+            "currency": "EUR"
+          },
+          "metadata": {}
+        },
+        "relationships": {
+          "provider": {
+            "data": {
+              "id": "60e6f501-7388-4dd9-8e66-57ee0e02b632",
+              "type": "user"
+            }
+          },
+          "customer": {
+            "data": {
+              "id": "61a614ab-3968-476a-8bbf-d56ec4a3024a",
+              "type": "user"
+            }
+          },
+          "listing": {
+            "data": {
+              "id": "6163fc9e-efd8-42ee-a867-a73ed5e1586d",
+              "type": "listing"
+            }
+          },
+          "booking": {
+            "data": {
+              "id": "61a614b0-4225-48ea-9fab-00434c220c56",
+              "type": "booking"
+            }
+          },
+          "stockReservation": {
+            "data": null
+          },
+          "marketplace": {
+            "data": {
+              "id": "60852f61-f77c-4ebd-81cc-b9b05420bab0",
+              "type": "marketplace"
+            }
+          }
+        },
+        "id": "61a614b0-5e1e-4853-abbf-6a8e5cd38dde",
+        "type": "transaction"
+      },
+      "auditData": {
+        "userId": "61a614ab-3968-476a-8bbf-d56ec4a3024a",
+        "adminId": null,
+        "requestId": "6779a17a-58a0-4036-9b3c-f10fa3789dfc",
+        "clientId": "866fd315-e063-475a-9ec0-139673e971f3"
+      },
+      "sequenceId": 35341389,
+      "previousValues": {},
+      "marketplaceId": "60852f61-f77c-4ebd-81cc-b9b05420bab0"
+    }
+  },
+  {
+    "id": "d135b05a-9e02-5b9b-a711-725ef8a85298",
+    "type": "event",
+    "attributes": {
+      "eventType": "transaction/transitioned",
+      "createdAt": "2021-11-29T09:30:08.359Z",
+      "resourceType": "transaction",
+      "source": "source/transaction",
+      "resourceId": "618501f2-d9d8-4617-b734-ccecb091c1cc",
+      "resource": {
+        "attributes": {
+          "processName": "flex-hourly-default-process",
+          "transitions": [
+            {
+              "transition": "transition/request-payment",
+              "createdAt": "2021-11-05T10:05:40.380Z",
+              "by": "customer"
+            },
+            {
+              "transition": "transition/confirm-payment",
+              "createdAt": "2021-11-05T10:05:42.185Z",
+              "by": "customer"
+            },
+            {
+              "transition": "transition/accept",
+              "createdAt": "2021-11-05T10:06:39.601Z",
+              "by": "provider"
+            },
+            {
+              "transition": "transition/complete",
+              "createdAt": "2021-11-22T09:30:05.362Z",
+              "by": "system"
+            },
+            {
+              "transition": "transition/expire-review-period",
+              "createdAt": "2021-11-29T09:30:08.346Z",
+              "by": "system"
+            }
+          ],
+          "payoutTotal": {
+            "amount": 2450,
+            "currency": "EUR"
+          },
+          "processVersion": 35,
+          "createdAt": "2021-11-05T10:05:38.585Z",
+          "lastTransitionedAt": "2021-11-29T09:30:08.346Z",
+          "protectedData": {},
+          "lineItems": [
+            {
+              "quantity": 1,
+              "reversal": false,
+              "lineTotal": {
+                "amount": 3500,
+                "currency": "EUR"
+              },
+              "code": "line-item/adult",
+              "includeFor": ["customer", "provider"],
+              "unitPrice": {
+                "amount": 3500,
+                "currency": "EUR"
+              }
+            },
+            {
+              "reversal": false,
+              "lineTotal": {
+                "amount": -350,
+                "currency": "EUR"
+              },
+              "code": "line-item/discount",
+              "includeFor": ["customer"],
+              "unitPrice": {
+                "amount": 3500,
+                "currency": "EUR"
+              },
+              "percentage": -10
+            },
+            {
+              "reversal": false,
+              "lineTotal": {
+                "amount": -1050,
+                "currency": "EUR"
+              },
+              "code": "line-item/provider-commission",
+              "includeFor": ["provider"],
+              "unitPrice": {
+                "amount": 3500,
+                "currency": "EUR"
+              },
+              "percentage": -30
+            }
+          ],
+          "lastTransition": "transition/expire-review-period",
+          "payinTotal": {
+            "amount": 3150,
+            "currency": "EUR"
+          },
+          "metadata": {}
+        },
+        "relationships": {
+          "provider": {
+            "data": {
+              "id": "60e6f501-7388-4dd9-8e66-57ee0e02b632",
+              "type": "user"
+            }
+          },
+          "customer": {
+            "data": {
+              "id": "60e6f6f5-aeee-4b90-a4a6-04bd96f376a8",
+              "type": "user"
+            }
+          },
+          "listing": {
+            "data": {
+              "id": "6163fc9e-efd8-42ee-a867-a73ed5e1586d",
+              "type": "listing"
+            }
+          },
+          "booking": {
+            "data": {
+              "id": "618501f2-00f6-40cb-826e-c49c6f7a0658",
+              "type": "booking"
+            }
+          },
+          "stockReservation": {
+            "data": null
+          },
+          "marketplace": {
+            "data": {
+              "id": "60852f61-f77c-4ebd-81cc-b9b05420bab0",
+              "type": "marketplace"
+            }
+          }
+        },
+        "id": "618501f2-d9d8-4617-b734-ccecb091c1cc",
+        "type": "transaction"
+      },
+      "auditData": {
+        "userId": null,
+        "adminId": null,
+        "requestId": null,
+        "clientId": null
+      },
+      "sequenceId": 35233619,
+      "previousValues": {
+        "attributes": {
+          "lastTransition": "transition/complete",
+          "transitions": [
+            {
+              "transition": "transition/request-payment",
+              "createdAt": "2021-11-05T10:05:40.380Z",
+              "by": "customer"
+            },
+            {
+              "transition": "transition/confirm-payment",
+              "createdAt": "2021-11-05T10:05:42.185Z",
+              "by": "customer"
+            },
+            {
+              "transition": "transition/accept",
+              "createdAt": "2021-11-05T10:06:39.601Z",
+              "by": "provider"
+            },
+            {
+              "transition": "transition/complete",
+              "createdAt": "2021-11-22T09:30:05.362Z",
+              "by": "system"
+            }
+          ],
+          "lastTransitionedAt": "2021-11-22T09:30:05.362Z"
+        }
+      },
+      "marketplaceId": "60852f61-f77c-4ebd-81cc-b9b05420bab0"
+    }
+  },
+  {
+    "id": "945e0b93-baaf-5335-b621-3ce5542772e3",
+    "type": "event",
+    "attributes": {
+      "eventType": "user/created",
+      "createdAt": "2021-11-30T12:10:19.802Z",
+      "resourceType": "user",
+      "source": "source/marketplace-api",
+      "resourceId": "61a614ab-3968-476a-8bbf-d56ec4a3024a",
+      "resource": {
+        "attributes": {
+          "deleted": false,
+          "banned": false,
+          "email": "donovan.costa+testfr@elgoritmo.pt",
+          "stripeConnected": false,
+          "createdAt": "2021-11-30T12:10:19.790Z",
+          "identityProviders": [],
+          "pendingEmail": null,
+          "emailVerified": false,
+          "profile": {
+            "displayName": "Donovan C",
+            "firstName": "Donovan",
+            "privateData": {},
+            "protectedData": {
+              "city": "København V",
+              "name": "Donovan Costa",
+              "type": 1,
+              "postal": "15580",
+              "country": "DK",
+              "phoneNumber": "25756220123",
+              "addressLine1": "Sveltekrogen 76"
+            },
+            "bio": null,
+            "abbreviatedName": "DC",
+            "lastName": "Costa",
+            "publicData": {},
+            "metadata": {}
+          }
+        },
+        "relationships": {
+          "marketplace": {
+            "data": {
+              "id": "60852f61-f77c-4ebd-81cc-b9b05420bab0",
+              "type": "marketplace"
+            }
+          },
+          "profileImage": {
+            "data": null
+          },
+          "stripeAccount": {
+            "data": null
+          }
+        },
+        "id": "61a614ab-3968-476a-8bbf-d56ec4a3024a",
+        "type": "user"
+      },
+      "auditData": {
+        "userId": null,
+        "adminId": null,
+        "requestId": "3bf6ba2d-5977-41aa-b6af-10a8e77fdea2",
+        "clientId": "866fd315-e063-475a-9ec0-139673e971f3"
+      },
+      "sequenceId": 35341377,
+      "previousValues": {},
+      "marketplaceId": "60852f61-f77c-4ebd-81cc-b9b05420bab0"
+    }
+  },
+  {
+    "id": "be87303d-86a8-5e07-b8a7-264a019d93e0",
+    "type": "event",
+    "attributes": {
+      "eventType": "user/updated",
+      "createdAt": "2021-11-29T12:51:38.056Z",
+      "resourceType": "user",
+      "source": "source/marketplace-api",
+      "resourceId": "60f993ff-5fbb-4ae9-95a8-80f886b081d4",
+      "resource": {
+        "attributes": {
+          "deleted": false,
+          "banned": false,
+          "email": "donovan.costa+wood@elgoritmo.pt",
+          "stripeConnected": false,
+          "createdAt": "2021-07-22T15:51:27.754Z",
+          "identityProviders": [],
+          "pendingEmail": null,
+          "emailVerified": true,
+          "profile": {
+            "displayName": "Don C",
+            "firstName": "Don",
+            "privateData": {},
+            "protectedData": {
+              "hide": true,
+              "type": "2",
+              "phoneNumber": "351123123124"
+            },
+            "bio": null,
+            "abbreviatedName": "DC",
+            "lastName": "Costa",
+            "publicData": {
+              "cname": "Wood island tours"
+            },
+            "metadata": {}
+          }
+        },
+        "relationships": {
+          "marketplace": {
+            "data": {
+              "id": "60852f61-f77c-4ebd-81cc-b9b05420bab0",
+              "type": "marketplace"
+            }
+          },
+          "profileImage": {
+            "data": null
+          },
+          "stripeAccount": {
+            "data": null
+          }
+        },
+        "id": "60f993ff-5fbb-4ae9-95a8-80f886b081d4",
+        "type": "user"
+      },
+      "auditData": {
+        "userId": "60f993ff-5fbb-4ae9-95a8-80f886b081d4",
+        "adminId": null,
+        "requestId": "6a555634-f0b3-4d35-a898-ce65ae45ca35",
+        "clientId": "866fd315-e063-475a-9ec0-139673e971f3"
+      },
+      "sequenceId": 35246273,
+      "previousValues": {
+        "attributes": {
+          "profile": {
+            "protectedData": {
+              "phoneNumber": "351123123123"
+            }
+          }
+        }
+      },
+      "marketplaceId": "60852f61-f77c-4ebd-81cc-b9b05420bab0"
+    }
+  },
+  {
+    "id": "2f1bad89-e6a7-5a3d-9ac8-345cd3d3a166",
+    "type": "event",
+    "attributes": {
+      "eventType": "listing/updated",
+      "createdAt": "2021-11-29T17:50:18.625Z",
+      "resourceType": "listing",
+      "source": "source/console",
+      "resourceId": "6163fc9e-efd8-42ee-a867-a73ed5e1586d",
+      "resource": {
+        "attributes": {
+          "description": "East Tour Madeira will take you to the highest peak accessible by car: Pico do Areeiro with its panoramic views. On the way down to Ribeiro Frio, we will pass by the Worlds Patrimony Forest considered by the UNESCO: Laurissilva.\n\nBy lunchtime we will be stopping in Santana, known by its typical thatched triangular houses. Finally, in the afternoon we will visit the place where the settlers sat foot for the first time in Madeira: Machico.\n\nPlaces: Camacha – Pico do Areeiro – Ribeiro Frio – Faial – Santana – Portela – Ponta de São Lourenço – Machico",
+          "deleted": false,
+          "geolocation": {
+            "lat": 32.8049,
+            "lng": -16.8813
+          },
+          "createdAt": "2021-10-11T08:58:06.436Z",
+          "state": "published",
+          "privateData": {},
+          "title": "Madeira East Tour",
+          "availabilityPlan": {
+            "type": "availability-plan/time",
+            "timezone": "Atlantic/Madeira",
+            "entries": [
+              {
+                "dayOfWeek": "mon",
+                "seats": 999,
+                "startTime": "09:00",
+                "endTime": "17:00"
+              },
+              {
+                "dayOfWeek": "wed",
+                "seats": 999,
+                "startTime": "09:00",
+                "endTime": "17:00"
+              },
+              {
+                "dayOfWeek": "fri",
+                "seats": 999,
+                "startTime": "09:00",
+                "endTime": "17:00"
+              }
+            ]
+          },
+          "publicData": {
+            "duration": "7to8",
+            "location": {
+              "address": "Santana, Região Autónoma da Madeira, Portugal",
+              "building": ""
+            },
+            "priceChild": {
+              "amount": 1800,
+              "currency": "EUR"
+            },
+            "certificate": "yes",
+            "googleRating": 3.7,
+            "descriptionFR": "Lorem Ipsum",
+            "tourlyCategories": [
+              "roadexcursions",
+              "gardensreserves",
+              "sightseeing"
+            ],
+            "discountPercentage": -10
+          },
+          "price": {
+            "amount": 3500,
+            "currency": "EUR"
+          },
+          "metadata": {}
+        },
+        "relationships": {
+          "author": {
+            "data": {
+              "id": "60e6f501-7388-4dd9-8e66-57ee0e02b632",
+              "type": "user"
+            }
+          },
+          "marketplace": {
+            "data": {
+              "id": "60852f61-f77c-4ebd-81cc-b9b05420bab0",
+              "type": "marketplace"
+            }
+          },
+          "currentStock": {
+            "data": null
+          },
+          "images": {
+            "data": [
+              {
+                "id": "6163fd00-e393-492a-8025-9939f9085303",
+                "type": "image"
+              }
+            ]
+          }
+        },
+        "id": "6163fc9e-efd8-42ee-a867-a73ed5e1586d",
+        "type": "listing"
+      },
+      "auditData": {
+        "userId": null,
+        "adminId": "6086b2b5-2a52-4791-b254-9a032ca452b6",
+        "requestId": "36e5782b-bab2-483a-a3d3-6f9d40a705bc",
+        "clientId": null
+      },
+      "sequenceId": 35289471,
+      "previousValues": {
+        "attributes": {
+          "publicData": {
+            "descriptionFR": null
+          }
+        }
+      },
+      "marketplaceId": "60852f61-f77c-4ebd-81cc-b9b05420bab0"
+    }
+  }
+]

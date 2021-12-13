@@ -1,0 +1,29 @@
+{
+    "id": "61a8ebe9-0805-4189-95a2-ec2e60cd66b9",
+    "type": "user",
+    "attributes": {
+        "deleted": false,
+        "banned": false,
+        "email": "donovan.costa+activetester@elgoritmo.pt",
+        "stripeConnected": false,
+        "createdAt": "2021-12-02T15:53:13.719Z",
+        "identityProviders": [],
+        "pendingEmail": null,
+        "emailVerified": false,
+        "profile": {
+            "displayName": "Donovan C",
+            "firstName": "Donovan",
+            "privateData": {},
+            "protectedData": {
+                "hide": false,
+                "phoneNumber": "25756220123",
+                "type": "1"
+            },
+            "bio": null,
+            "abbreviatedName": "DC",
+            "lastName": "Costa",
+            "publicData": {},
+            "metadata": {}
+        }
+    }
+}
